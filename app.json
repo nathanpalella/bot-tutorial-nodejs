@@ -1,7 +1,7 @@
 {
-  "name": "Cool guy bot",
+  "name": "Mort bot",
   "description": "Basic Groupme Bot written in Node",
-  "repository": "https://github.com/petemcgrath/cool-guy-bot",
-  "logo": "http://www.tailgate365.com/wp-content/uploads/2011/06/tom-hanks-906.jpg",
+  "repository": "https://github.com/nathanpalella/bot-tutorial-nodejs",
+  "logo": "https://i.groupme.com/210x240.jpeg.426513551bcb42e79e8f8ad17866b6ac",
   "keywords": []
 }
