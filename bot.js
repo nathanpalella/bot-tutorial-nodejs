@@ -12,7 +12,22 @@ function respond() {
     postMessage();
     this.res.end();
   } else {
-    console.log("don't care");
+    console.log("don't care - respond error");
+    this.res.writeHead(200);
+    this.res.end();
+  }
+}
+
+function insult() {
+  var request = JSON.parse(this.req.chunks[0]),
+      botRegex = /mort insult$/;
+
+  if(request.text && botRegex.test(request.text)) {
+    this.res.writeHead(200);
+    postInsult();
+    this.res.end();
+  } else {
+    console.log("don't care - insult error");
     this.res.writeHead(200);
     this.res.end();
   }
@@ -21,7 +36,23 @@ function respond() {
 function postMessage() {
   var botResponse, options, body, botReq;
 
-  botResponse = cool();
+  botResponse = /Success!/;
+
+  options = {
+    hostname: 'api.groupme.com',
+    path: '/v3/bots/post',
+    method: 'POST'
+  };
+
+  body = {
+    "bot_id" : botID,
+    "text" : botResponse
+  };
+  
+  function postInsult() {
+  var botResponse, options, body, botReq;
+
+  botResponse = /Friggin smoothie/;
 
   options = {
     hostname: 'api.groupme.com',
